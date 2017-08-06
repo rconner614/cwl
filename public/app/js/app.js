@@ -12,9 +12,6 @@ function config($stateProvider, $urlRouterProvider, $locationProvider) {
         url: '/',
         templateUrl: '/app/views/_login.html',
         controller: 'loginCtrl'
-    }).state('documents', {
-        url: '/documents',
-        templateUrl: '/app/views/_documents.html'
     });
     $locationProvider.html5Mode(true);
 }

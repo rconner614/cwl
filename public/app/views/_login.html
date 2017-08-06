@@ -30,7 +30,7 @@
             <p class="text-center"><small>You must be in good standing with Candlewood Lake to register.<br>Once the information is verified your account will be activated.</small></p>
         </div>
     </div>
-    <div class="row" ng-if="user.isAuthenticated()">
+    <div class="row" ng-if="user.isAuthenticated()" style="padding-bottom: 10%">
         <div class="col-sm-12">
             <h3 class="text-center">Welcome back {{user.name}}!</h3>
             <hr>
@@ -52,6 +52,24 @@
                     <div class="clearfix"></div>
                 </div>
             </div>
+            <hr>
+            <h3 class="text-center">New Document</h3>
+            <form ng-submit="upload()">
+                <div class="form-group">
+                    <label>Document (PDF)</label>
+                    <input class="form-control input-lg" type="file" ng-model="newFile.data" name="docData" title="File" required>
+                </div>
+                <label>Document Name</label>
+                <div class="input-group input-group-lg">
+                    <input class="form-control input-lg" ng-model="newFile.name" placeholder="Document Name" title="Document Name" name="docName" required>
+                    <div class="input-group-btn">
+                        <button class="btn btn-lg btn-primary" type="submit">
+                            <i class="fa fa-save"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
         </div>
     </div>
 </div>
@@ -61,6 +79,15 @@
         <div class="col-sm-12 text-center">
             <h3>Looking for our main website?</h3>
             <a href="http://candlewoodlake.us/" class="btn btn-lg btn-outline" title="Return to Candlewood Lake Homepage">Return to Homepage</a>
+        </div>
+    </div>
+</section>
+<section class="bg-primary" ng-show="user.isAuthenticated()">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h3>Have any questions?</h3>
+            <p>Are we missing any documents? Do you need a form updated?</p>
+            <a href="#" class="btn btn-lg btn-outline" title="Contact">Contact Us</a>
         </div>
     </div>
 </section>

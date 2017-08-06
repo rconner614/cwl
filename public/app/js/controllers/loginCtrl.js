@@ -10,24 +10,28 @@
             }
         };
         $scope.filterDocs = {};
-        $scope.documents = [
-            {
-                name: 'June Minutes',
-                type: 'minutes'
-            },
-            {
-                name: 'July Minutes',
-                type: 'minutes'
-            },
-            {
-                name: 'Candlewood Lake Property Handbook 2017',
-                type: 'handbook'
-            },
-            {
-                name: 'Parade Permit',
-                type: 'misc'
-            }
-        ];
+        if($scope.user.isAuthenticated()){
+            //protect fetching documents unless authenticated
+            $scope.documents = [
+                {
+                    name: 'June Minutes',
+                    type: 'minutes'
+                },
+                {
+                    name: 'July Minutes',
+                    type: 'minutes'
+                },
+                {
+                    name: 'Candlewood Lake Property Handbook 2017',
+                    type: 'handbook'
+                },
+                {
+                    name: 'Parade Permit',
+                    type: 'misc'
+                }
+            ];
+        }
+
         $scope.login = function(){
             authSrv.login($scope.user);
         };
