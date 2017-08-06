@@ -10,7 +10,8 @@ function config($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider.state('home', {
         url: '/',
-        templateUrl: '/app/views/_login.html'
+        templateUrl: '/app/views/_login.html',
+        controller: 'loginCtrl'
     }).state('documents', {
         url: '/documents',
         templateUrl: '/app/views/_documents.html'
