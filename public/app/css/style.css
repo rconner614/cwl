@@ -37,6 +37,9 @@ hr {
 hr.light {
   border-color: white;
 }
+.pointer {
+  cursor: pointer;
+}
 h1,
 h2,
 h3,
@@ -123,6 +126,18 @@ footer ul li a.active {
 .btn-xl {
   padding: 15px 45px;
   font-size: 11px;
+}
+.navbar-default .navbar-nav > .open li.active {
+  background-color: #eee;
+}
+.navbar-default .navbar-nav > .open li.active a {
+  text-decoration: none !important;
+}
+.navbar-default .navbar-nav > .open ul.list-unstyled li {
+  padding: 5px 10px 5px 20px;
+}
+.navbar-default .navbar-nav > .open li a {
+  text-decoration: none !important;
 }
 ::-moz-selection {
   color: white;

@@ -21,10 +21,7 @@
         [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
             display: none !important;
         }
-        body {
-            padding-top: 70px;
-            /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-        }
+
     </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,7 +33,115 @@
 </head>
 
 <body ng-cloak class="ng-cloak">
-
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Candlewood Lake</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Welcome</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Maps &amp; Directions</a></li>
+                        <li><a href="#">Meet the Board</a></li>
+                        <li><a href="#">Governance</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explore <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown">
+                            <a href="#" ng-click="$event.stopPropagation(); showOne = !showOne">The Lake <span class="caret"></span></a>
+                            <ul ng-show="showOne" class="list-unstyled">
+                                <li class="active">
+                                    <a href="#">Boating</a>
+                                </li>
+                                <li>
+                                    <a href="#">Fishing</a>
+                                </li>
+                                <li>
+                                    <a href="#">More Lake Fun</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Swimming Pools</a></li>
+                        <li><a href="#">Beach</a></li>
+                        <li><a href="#">More Activities</a></li>
+                        <li><a href="#">The Sites</a></li>
+                        <li><a href="#">Seasons</a></li>
+                        <li><a href="#">The Community</a></li>
+                        <li class="dropdown">
+                            <a href="#" ng-click="$event.stopPropagation(); showTwo = !showTwo">Amenities <span class="caret"></span></a>
+                            <ul  ng-show="showTwo" class="list-unstyled">
+                                <li><a href="#">Facilties</a></li>
+                                <li><a href="#">Lodges</a></li>
+                                <li><a href="#">Camping</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Near By</a></li>
+                        <li><a href="#">Local Businesses</a></li>
+                        <li><a href="#">Clubs/Organizations</a></li>
+                        <li><a href="#">Area Attractions</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="">Upcoming Events</a></li>
+                        <li>
+                            <a href="#" ng-click="$event.stopPropagation(); showThree = !showThree">4th of July <span class="caret"></span></a>
+                            <ul ng-show="showThree" class="list-unstyled">
+                                <li><a href="#">Fireworks</a></li>
+                                <li><a href="#">More Activities</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Ongoing Events</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Real Estate <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Information</a></li>
+                        <li><a href="#">Building Info</a></li>
+                        <li>
+                            <a href="#" ng-click="$event.stopPropagation(); showFour = !showFour">For Sale <span class="caret"></span></a>
+                            <ul ng-show="showFour" class="list-unstyled">
+                                <li><a href="#" class="">By Candlewood</a></li>
+                                <li><a href="#" class="">By Realtor/Homeowner</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" target="_blank">Chronicle</a></li>
+                        <li><a href="#" target="_blank">Candlewood News</a></li>
+                        <li><a href="#">Monthly Calendar</a></li>
+                        <li><a href="#">Member Experiences</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-if="!user.isAuthenticated()"><a href="/login">Member Site</a></li>
+                <li ng-if="user.isAuthenticated()"><a href="/documents">Member Site</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <ui-view></ui-view>
 <footer class="text-center">
     <a class="text-muted" href="https://www.facebook.com/candlewoodlake.oh" target="_blank"><i class="fa fa-2x fa-facebook-official"></i></a>
@@ -49,7 +154,6 @@
 <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="vendor/angular-bootstrap/ui-bootstrap.min.js"></script>
 <script src="/app/js/app.min.js"></script>
-
 </body>
 
 </html>
