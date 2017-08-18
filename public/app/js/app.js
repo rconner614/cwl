@@ -1,4 +1,4 @@
-var app = angular.module('cwl.core', ['ui.router']);
+var app = angular.module('cwl.core', ['ui.router', 'ui.bootstrap','ngAside']);
 
 app.run(["$rootScope", function($rootScope){
     $rootScope.today = new Date();
@@ -15,7 +15,12 @@ function config($stateProvider, $urlRouterProvider, $locationProvider) {
     }).state('login', {
         url: '/login',
         templateUrl: '/app/views/_login.html',
-        controller: 'loginCtrl'
+        controller: 'loginCtrl',
+        resolve: {
+            tab: [function(){
+                return 1;
+            }]
+        }
     }).state('documents', {
         url: '/documents',
         templateUrl: '/app/views/_documents.html',

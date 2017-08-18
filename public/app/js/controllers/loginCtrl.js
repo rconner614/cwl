@@ -2,38 +2,20 @@
     'use strict';
     angular.module('cwl.core')
         .controller('loginCtrl', loginCtrl);
-    loginCtrl.$inject = ['$scope', 'authSrv'];
-    function loginCtrl($scope, authSrv){
-        $scope.user = {
-            isAuthenticated: function(){
-                return false;
-            }
-        };
-        $scope.filterDocs = {};
-        if($scope.user.isAuthenticated()){
-            //protect fetching documents unless authenticated
-            $scope.documents = [
-                {
-                    name: 'June Minutes',
-                    type: 'minutes'
-                },
-                {
-                    name: 'July Minutes',
-                    type: 'minutes'
-                },
-                {
-                    name: 'Candlewood Lake Property Handbook 2017',
-                    type: 'handbook'
-                },
-                {
-                    name: 'Parade Permit',
-                    type: 'misc'
-                }
-            ];
-        }
-
+    loginCtrl.$inject = ['$scope', 'authSrv', '$location', 'tab'];
+    function loginCtrl($scope, authSrv, $location, tab){
+        console.log(tab);
+        $scope.tab = tab ? tab : 1;
+        $scope.user = {};
+        $scope.forgot = {};
         $scope.login = function(){
             authSrv.login($scope.user);
+        };
+        $scope.register = function(){
+            authSrv.register($scope.user);
+        };
+        $scope.forgotPassword = function(){
+            authSrv.forgotPassword($scope.forgot);
         };
     }
 }());
