@@ -8,3 +8,53 @@
 .ms-slidebar .ms-slidebar-header{
     background: #03a9f4;
 }
+html,
+body {
+    height: 100% !important;
+    margin: 0;
+    padding: 0;
+}
+#main-wrapper {
+    box-sizing: border-box;
+    min-height: 100%;
+    padding: 0 0 100px;
+    position: relative;
+}
+
+footer {
+    bottom: 0;
+    height: 100px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.list-group .list-group-item.document-selected {
+    background: #ddd;
+}
+
+.text-success {
+  color: #4dd752;
+}
+
+.text-grey {
+  color: #ccc;
+}
+
+.bg-orange {
+    background: #f68028 !important;
+}
+
+.btn.btn-primary:hover{
+    color: #666 !important;
+}
+.btn.btn-primary.active{
+    color: #fff !important;
+}
+.btn.btn-primary.active:focus, .btn.btn-primary.active:hover{
+    color: #666 !important;
+}

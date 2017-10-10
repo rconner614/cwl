@@ -211,7 +211,7 @@ body .container-fluid .jumbotron-royal {
 .btn:not(.btn-raised).btn-default,
 .input-group-btn .btn:not(.btn-raised),
 .input-group-btn .btn:not(.btn-raised).btn-default {
-    color: rgba(0, 0, 0, .87)
+    /*color: rgba(0, 0, 0, .87)*/
 }
 .btn:not(.btn-raised).btn-inverse,
 .input-group-btn .btn:not(.btn-raised).btn-inverse {
@@ -1957,7 +1957,7 @@ select.form-control[multiple],
     border: 0;
     background: transparent
 }
-.form-group input[type=file] {
+/*.form-group input[type=file] {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     position: absolute;
@@ -1968,7 +1968,7 @@ select.form-control[multiple],
     width: 100%;
     height: 100%;
     z-index: 100
-}
+}*/
 legend {
     border-bottom: 0
 }
@@ -2705,7 +2705,7 @@ fieldset[disabled] .navbar .btn-link:focus {
     color: #4caf50
 }
 .text-info {
-    color: #00bcd4
+    /*color: #00bcd4*/
 }
 .nav-tabs {
     background: #03a9f4
@@ -7372,7 +7372,7 @@ label.color-white {
     position: static!important;
     overflow: hidden!important;
     width: auto!important;
-    height: auto!important;
+    height: auto;
     padding-right: 0!important
 }
 .ms-header {
@@ -9519,7 +9519,7 @@ pre.line-numbers>code {
     font-weight: 400;
     padding: 17px 20px;
     padding: 1.7rem 2rem;
-    color: rgba(255, 255, 255, .8)!important;
+    color: #ddd!important;
     text-align: center
 }
 .nav.nav-tabs li a i {
@@ -9533,7 +9533,8 @@ pre.line-numbers>code {
     cursor: pointer;
     position: relative;
     transition: all cubic-bezier(0, 0, .2, 1) .5s;
-    color: #fff!important
+    color: #fff!important;
+    font-weight: 600;
 }
 .nav.nav-tabs li.active a i {
     -webkit-transform: rotate(360deg);
@@ -11070,7 +11071,7 @@ pre.line-numbers>code {
     overflow: hidden
 }
 .ms-hero-img-city {
-    background-image: url(../img/skyline.jpg);
+    background-image: url(../img/water.jpg);
     background-size: cover;
     background-position: center center
 }
@@ -14144,12 +14145,12 @@ body.lb-disable-scrolling {
 }
 .ms-slidebar .ms-slidebar-menu>li>a.collapsed:after {
     content: '\f106';
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg)
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg)
 }
 .ms-slidebar .ms-slidebar-menu>li>a.link {
     background-color: #fff;
-    color: #616161
+    color: #616161;
 }
 .ms-slidebar .ms-slidebar-menu>li>a.link:after {
     content: "\f105"
@@ -14566,7 +14567,7 @@ body.lb-disable-scrolling {
         background-color: #0286c2
     }
     .ms-header {
-        display: none
+        /*display: none*/
     }
     .ms-navbar .container .navbar-header {
         display: inline-block

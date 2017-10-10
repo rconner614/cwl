@@ -2,34 +2,24 @@
     'use strict';
     angular.module('cwl.core')
         .controller('documentsCtrl', documentsCtrl);
-    documentsCtrl.$inject = ['$scope'];
-    function documentsCtrl($scope){
-        $scope.user = {
-            isAuthenticated: function(){
-                return true;
-            }
-        };
-        $scope.filterDocs = {};
-        if($scope.user.isAuthenticated()){
-            //protect fetching documents unless authenticated
-            $scope.documents = [
-                {
-                    name: 'June Minutes',
-                    type: 'minutes'
-                },
-                {
-                    name: 'July Minutes',
-                    type: 'minutes'
-                },
-                {
-                    name: 'Candlewood Lake Property Handbook 2017',
-                    type: 'handbook'
-                },
-                {
-                    name: 'Parade Permit',
-                    type: 'misc'
-                }
-            ];
-        }
+    documentsCtrl.$inject = ['$scope', 'authSrv', '$location', 'docs', 'documentSrv'];
+    function documentsCtrl($scope, authSrv, $location, docs, documentSrv){
+      if(!authSrv.user()){
+          $location.path('/login');
+      }
+      $scope.user = authSrv.user();
+      $scope.types = documentSrv.types;
+      $scope.selectedDocument = null;
+      $scope.select = function(document){
+          $scope.selectedDocument = angular.copy(document);
+      };
+
+      $scope.selected = function(document){
+          return document && $scope.selectedDocument && document._id === $scope.selectedDocument._id;
+      };
+
+      $scope.filterDocs = {};
+      $scope.documents = docs;
+      console.log($scope.documents);
     }
 }());

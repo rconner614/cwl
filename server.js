@@ -18,7 +18,7 @@ var configDefaults = util._extend({}, config.infoDefaults);
 app.get('*', function (req, res) {
     var info = util._extend({}, config.infoDefaults);
 
-    res.render('layout', info);
+    res.sendFile(path.resolve(__dirname, 'app/public/index.html'));
 });
 
 
